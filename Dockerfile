@@ -14,7 +14,7 @@ RUN npm run build --prod
 
 FROM nginx:latest as prod-stage
 
-COPY --from=build-stage /usr/src/app/dist/sample /user/share/nginx/html
+COPY --from=build-stage /usr/src/app/dist/sample /usr/share/nginx/html
 
 
 
