@@ -12,7 +12,7 @@ COPY . .
 
 RUN npm run build --prod
 
-FROM nginx:latest-alpine as prod-stage
+FROM nginx:latest as prod-stage
 
 COPY --from=build-stage /usr/src/app/dist/sample /user/share/nginx/html
 
