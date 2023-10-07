@@ -16,6 +16,6 @@ FROM nginx:latest as prod-stage
 
 COPY --from=build-stage /usr/src/app/dist/sample /user/share/nginx/html
 
-COPY nginx.conf /etc/nginx/conf.d/default.conf
+
 
 EXPOSE 80
