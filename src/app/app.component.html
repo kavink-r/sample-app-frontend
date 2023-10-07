@@ -1,37 +1,45 @@
-<div class="container">
-  <div>
-    <h6>Welcome to my website !!!!!!!!!</h6>
+<div class="container card">
+  <div class="card my-3" style="height: auto;">
+    <h2 class="text-center my-2">Welcome to my website !!!!!!!!!</h2>
+    <p class="px-2 py-2" style=" text-align: justify;text-indent: 70px;">
+      This is a Demo application to practice CI/CD using Jenkins. This web application consists of a RestAPI, Front-end User Interface and MySQL database developed using Java SpringBoot, Typescript Angular and MySQL database instance is created in AWS RDS MySQL. The application is containerized using Docker and pushed to DockerHub.
+      The initial step consists of creating an <b>MySQL database instance in AWS RDS.</b> After successfull creation of database instance, <b>RestAPI is developed using Java SpringBoot.</b> After successfull development of RestAPI, <b>UserInterface is developed using Typescript Angular.</b> Dockerfiles are created for both the application in order to proceed to build and deployment process. <b>The entire build and deployment process is automated using Jenkins</b> CI/CD tool by pulling the source code from GitHub, Building the application using <b>Maven</b> for RestAPi and <b>NodeJS</b> for User Interface, 
+      Creating docker images using <b>Docker</b> and pushing to <b>DockerHub</b>. An <b>AWS cloud instance</b> is created to host this Demo web application. The instance is installed with Docker engine and running. The docker images are pulled from DockerHub and executed in the docker engine of the cloud instance.
+    </p>
   </div>
-  <div style="width: 50%;display: inline;float: left;">
-<h5>List of Products:</h5>
-<table class="table table-bordered">
-  <thead class="table-dark">
-    <tr>
-      <th>Id</th>
-      <th>Name</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let p of products">
-      <td>{{p.id}}</td>
-      <td>{{p.productName}}
-        <button class="btn btn-sm btn-danger" style="float: right;" (click)="deleteProduct(p)">X</button>
-      </td>
-    </tr>
-  </tbody>
-</table>
-</div>
-<div style="width: 50%;display: inline;float: right;">
-  <div class="card p-4 my-4 mx-3">
-    <form >
-      Product ID<br>
-      <input type="number" name="id" id="id" [(ngModel)]="newProduct.id"><br>
-      Product Name <br>
-      <input type="text" name="name" id="name" [(ngModel)]="newProduct.productName"><br>
-      <input type="submit" value="Add Product" class="btn btn-primary my-2" (click)="addProduct()">
+  <div class="my-3">
+    <div style="width: 50%;display: inline;float: left;">
+      <h5>List of Products:</h5>
+      <table class="table table-bordered">
+        <thead class="table-dark">
+          <tr>
+            <th>Id</th>
+            <th>Name</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let p of products">
+            <td>{{p.id}}</td>
+            <td>{{p.productName}}
+              <button class="btn btn-sm btn-danger" style="float: right;" (click)="deleteProduct(p)">X</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div style="width: 50%;display: inline;float: right;">
+      <h4 class="my-4 mx-3">Add Product</h4>
+      <div class="card p-4 my-4 mx-3">
+        <form>
+          Product ID<br>
+          <input type="number" name="id" id="id" [(ngModel)]="newProduct.id"><br>
+          Product Name <br>
+          <input type="text" name="name" id="name" [(ngModel)]="newProduct.productName"><br>
+          <input type="submit" value="Add Product" class="btn btn-primary my-2" (click)="addProduct()">
 
-    </form>
+        </form>
+      </div>
+    </div>
   </div>
-</div>
 </div>
 <router-outlet></router-outlet>
